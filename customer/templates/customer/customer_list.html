@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .title {
+            margin-bottom: 30px;
+            color: #343a40;
+        }
+
+        .btn-primary {
+            margin-bottom: 20px;
+        }
+
+        .customer-item {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .customer-info {
+            flex-grow: 1;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Customer List</h1>
+        <a href="{% url 'customer_create' %}" class="btn btn-primary">Create New Customer</a>
+        <ul class="list-group">
+            {% for customer in customers %}
+            <li class="list-group-item customer-item">
+                <span class="customer-info">
+                    {{ customer.name }} - {{ customer.email }} - {{ customer.phone }} - {{ customer.address }}
+                </span>
+                <div class="actions">
+                    <a href="{% url 'customer_update' customer.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{% url 'customer_delete' customer.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
