@@ -5,42 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Customer</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        /* Global styles */
         body {
-            background-color: #f8f9fa;
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            margin-top: 50px;
+            width: 100%;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .title {
+            text-align: center;
             margin-bottom: 30px;
-            color: #343a40;
+            color: #333;
+            font-size: 30px;
+            font-weight: bold;
         }
 
         .confirm-delete-form {
-            background: #fff;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
         }
 
+        .confirm-delete-form p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Button styles */
         .btn-danger {
             background-color: #dc3545;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn-danger:hover {
             background-color: #c82333;
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
             background-color: #6c757d;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn-secondary:hover {
             background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 26px;
+            }
+
+            .btn-danger,
+            .btn-secondary {
+                width: 100%;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -55,9 +107,6 @@
             <a href="{% url 'customer_list' %}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'payment',
     'shipment',
     'staff',
+    'book',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,7 @@ DATABASES = {
     }
 }
 
+DATABASE_ROUTERS = ['nddong_project1.dbrouters.BookRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
